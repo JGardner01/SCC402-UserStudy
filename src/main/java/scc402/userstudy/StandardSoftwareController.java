@@ -6,31 +6,35 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
-
-public class StandardMainMenuController {
+public class StandardSoftwareController {
     @FXML
-    private Button hardwareButton;
+    private Button backButton;
 
     @FXML
-    protected void onHardwareButtonClick() {
-        loadScene("standard-hardware-menu.fxml");
+    protected void onBackButtonClick() {
+        loadScene("standard-main-menu.fxml");
+    }
+
+    /*
+
+    TO BE IMPLEMENTED
+
+    @FXML
+    protected void () {
+        loadScene("standard-sound-menu.fxml");
     }
 
     @FXML
-    protected void onSoftwareButtonClick() {
-        loadScene("standard-software-menu.fxml");
+    protected void () {
+        loadScene("standard-connectivity-page.fxml");
     }
-
-    @FXML
-    protected void onAboutButtonClick() {
-        loadScene("standard-about.fxml");
-    }
+    */
 
     private void loadScene(String fxmlFile) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFile));
             Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = (Stage) hardwareButton.getScene().getWindow();
+            Stage stage = (Stage) backButton.getScene().getWindow();
             stage.setScene(scene);
         } catch (Exception e) {
             e.printStackTrace();
