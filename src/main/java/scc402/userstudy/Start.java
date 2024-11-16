@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class Start extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("start-scene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Start.class.getResource("start-scene.fxml"));
         Scene startScene = new Scene(fxmlLoader.load());
         stage.setTitle("SCC 402 User Study");
         stage.setScene(startScene);
