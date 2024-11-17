@@ -6,9 +6,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class TestIntroductionController {
-    public final String task1Instructions = "Navigate and enable Bluetooth.";
-    public final String task2Instructions = "Adjust the volume to 100.";
-
     @FXML
     private Text nameText;
     @FXML
@@ -20,10 +17,10 @@ public class TestIntroductionController {
     public void initialize(){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
             nameText.setText("Task 1 of 2");
-            instructionsText.setText(task1Instructions);
+            instructionsText.setText(TaskManager.task1Instructions);
         } else if (StateManager.getCurrentTest() == StateManager.Test.TEST2) {
             nameText.setText("Task 2 of 2");
-            instructionsText.setText(task2Instructions);
+            instructionsText.setText(TaskManager.task2Instructions);
         }
     }
 
