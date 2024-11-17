@@ -1,5 +1,14 @@
-Task 1 (Click not registering)
-Happening on buttons ...
+# SCC 402 User Study
+## Task 1 (Click not registering)
+**Instructions:** Navigate and enable Bluetooth 
 
-Task 2 (Unintended navigation)
-Happening on buttons ...
+**Task Ends:** On Bluetooth Enabled
+
+**Click Not Registering On Buttons** ...
+
+## Task 2 (Unintended navigation)
+**Instructions:** Navigate and 
+
+**Task Ends:** On 
+
+**Unintended Navigation On Buttons** ...
