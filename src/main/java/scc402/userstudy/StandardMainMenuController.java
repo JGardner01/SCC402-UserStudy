@@ -3,8 +3,10 @@ package scc402.userstudy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.stage.StageStyle;
 
 
 public class StandardMainMenuController {
@@ -15,7 +17,30 @@ public class StandardMainMenuController {
 
     @FXML
     public void initialize(){
-        startTestButton.setVisible(StateManager.getCurrentMode() == StateManager.Mode.DEMO);
+        if (StateManager.getCurrentMode() == StateManager.Mode.DEMO){
+            startTestButton.setVisible(true);
+        } else{
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test-introduction.fxml"));
+                Scene testIntroScene = new Scene(fxmlLoader.load());
+
+                Stage testIntroStage = new Stage();
+                testIntroStage.setTitle("Test Instructions");
+                testIntroStage.initModality(Modality.APPLICATION_MODAL);
+
+                testIntroStage.setOnCloseRequest(event -> {
+                    event.consume(); // Prevents the window from closing
+                });
+
+                testIntroStage.setScene(testIntroScene);
+                testIntroStage.showAndWait();
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
+
+        }
     }
 
     @FXML
@@ -36,6 +61,7 @@ public class StandardMainMenuController {
     @FXML
     protected void onStartTestButtonClick(){
         StateManager.setCurrentMode(StateManager.Mode.TEST);
+        StateManager.setCurrentTest(StateManager.Test.Test1);
         loadScene("standard-main-menu.fxml");
     }
 

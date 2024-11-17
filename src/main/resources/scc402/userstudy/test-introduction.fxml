@@ -17,7 +17,7 @@
             <Font name="Calibri" size="18.0" />
          </font>
       </Text>
-      <Button mnemonicParsing="false" onAction="#onStartTaskButton" text="Begin Task">
+      <Button fx:id="startTaskButton" mnemonicParsing="false" onAction="#onStartTaskButton" text="Begin Task">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>

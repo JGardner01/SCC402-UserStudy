@@ -12,7 +12,7 @@ public class StateManager {
     }
 
     private static Mode currentMode;
-    private static Test currentTest;
+    private static Test currentTest = Test.Test1;
 
 
     public static Mode getCurrentMode(){

@@ -18,6 +18,7 @@ public class TestIntroductionController {
 
     @FXML
     public void initialize(){
+
         if (StateManager.getCurrentTest() == StateManager.Test.Test1){
             nameText.setText("Task 1 of 2");
             instructionsText.setText(task1Instructions);
