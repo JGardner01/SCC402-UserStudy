@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.stage.StageStyle;
 
 
 public class StandardMainMenuController {
@@ -20,6 +19,8 @@ public class StandardMainMenuController {
         if (StateManager.getCurrentMode() == StateManager.Mode.DEMO){
             startTestButton.setVisible(true);
         } else{
+            startTestButton.setVisible(false);
+
             try{
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test-introduction.fxml"));
                 Scene testIntroScene = new Scene(fxmlLoader.load());

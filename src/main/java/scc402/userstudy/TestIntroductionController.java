@@ -26,7 +26,7 @@ public class TestIntroductionController {
 
     @FXML protected void onStartTaskButton(){
         //start timer in results class
-
+        TaskManager.startTask();
         //close window
         Stage stage = (Stage) startTaskButton.getScene().getWindow();
         stage.close();
