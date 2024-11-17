@@ -61,7 +61,7 @@ public class StandardMainMenuController {
     @FXML
     protected void onStartTestButtonClick(){
         StateManager.setCurrentMode(StateManager.Mode.TEST);
-        StateManager.setCurrentTest(StateManager.Test.Test1);
+        StateManager.setCurrentTest(StateManager.Test.TEST1);
         loadScene("standard-main-menu.fxml");
     }
 

@@ -18,11 +18,10 @@ public class TestIntroductionController {
 
     @FXML
     public void initialize(){
-
-        if (StateManager.getCurrentTest() == StateManager.Test.Test1){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
             nameText.setText("Task 1 of 2");
             instructionsText.setText(task1Instructions);
-        } else if (StateManager.getCurrentTest() == StateManager.Test.Test2) {
+        } else if (StateManager.getCurrentTest() == StateManager.Test.TEST2) {
             nameText.setText("Task 2 of 2");
             instructionsText.setText(task2Instructions);
         }

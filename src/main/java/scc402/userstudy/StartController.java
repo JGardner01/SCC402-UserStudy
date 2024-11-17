@@ -13,6 +13,7 @@ public class StartController {
     @FXML
     protected void onStartButtonClick() {
         System.out.println("Starting User Study");
+        StateManager.setCurrentUI(StateManager.UI.STANDARD);
         StateManager.setCurrentMode(StateManager.Mode.DEMO);
 
         try{
