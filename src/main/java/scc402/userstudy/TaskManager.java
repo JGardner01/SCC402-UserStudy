@@ -29,11 +29,16 @@ public class TaskManager {
     public static void endTask(){
         ResultsManager.endRecording(taskName);
 
-        /* NEEDS WORK HERE
+
+        // NEEDS WORK HERE
         if (StateManager.getCurrentTest() == StateManager.Test.TEST2){
-            StateManager.
+            StateManager.setCurrentTest(StateManager.Test.TEST2);
+            //reload and open introduction window with new tasks
+        } else if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && StateManager.getCurrentUI() == StateManager.UI.STANDARD) {
+            //update state manager and launch predictive ui demo
+        } else if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && StateManager.getCurrentUI() == StateManager.UI.PREDICTIVE){
+            //export results, open finishing window, ending user study
         }
-         */
     }
 
 

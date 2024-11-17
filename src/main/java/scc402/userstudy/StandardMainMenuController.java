@@ -20,27 +20,6 @@ public class StandardMainMenuController {
             startTestButton.setVisible(true);
         } else{
             startTestButton.setVisible(false);
-
-            try{
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test-introduction.fxml"));
-                Scene testIntroScene = new Scene(fxmlLoader.load());
-
-                Stage testIntroStage = new Stage();
-                testIntroStage.setTitle("Test Instructions");
-                testIntroStage.initModality(Modality.APPLICATION_MODAL);
-
-                testIntroStage.setOnCloseRequest(event -> {
-                    event.consume(); // Prevents the window from closing
-                });
-
-                testIntroStage.setScene(testIntroScene);
-                testIntroStage.showAndWait();
-
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-
-
         }
     }
 
@@ -64,6 +43,25 @@ public class StandardMainMenuController {
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         StateManager.setCurrentTest(StateManager.Test.TEST1);
         loadScene("standard-main-menu.fxml");
+
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test-introduction.fxml"));
+            Scene testIntroScene = new Scene(fxmlLoader.load());
+
+            Stage testIntroStage = new Stage();
+            testIntroStage.setTitle("Test Instructions");
+            testIntroStage.initModality(Modality.APPLICATION_MODAL);
+
+            testIntroStage.setOnCloseRequest(event -> {
+                event.consume(); // Prevents the window from closing
+            });
+
+            testIntroStage.setScene(testIntroScene);
+            testIntroStage.showAndWait();
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void loadScene(String fxmlFile) {
