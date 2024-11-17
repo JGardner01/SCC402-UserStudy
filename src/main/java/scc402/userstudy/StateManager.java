@@ -6,7 +6,14 @@ public class StateManager {
         TEST
     }
 
+    public enum Test{
+        Test1,
+        Test2
+    }
+
     private static Mode currentMode;
+    private static Test currentTest;
+
 
     public static Mode getCurrentMode(){
         return currentMode;
@@ -14,5 +21,13 @@ public class StateManager {
 
     public static void setCurrentMode(Mode mode){
         currentMode = mode;
+    }
+
+    public static Test getCurrentTest(){
+        return currentTest;
+    }
+
+    public static void setCurrentTest(Test test){
+        currentTest = test;
     }
 }
