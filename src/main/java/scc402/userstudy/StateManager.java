@@ -6,7 +6,7 @@ public class StateManager {
         TEST
     }
 
-    private static Mode currentMode = Mode.DEMO;
+    private static Mode currentMode;
 
     public static Mode getCurrentMode(){
         return currentMode;

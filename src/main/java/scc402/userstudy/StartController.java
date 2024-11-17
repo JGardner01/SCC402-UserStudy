@@ -13,7 +13,8 @@ public class StartController {
     @FXML
     protected void onStartButtonClick() {
         System.out.println("Starting User Study");
-        //load next scene
+        StateManager.setCurrentMode(StateManager.Mode.DEMO);
+
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("standard-main-menu.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -22,7 +23,8 @@ public class StartController {
 
 
         } catch (Exception e){
-            System.out.println("Exception: " + e);
+            System.out.println("Exception: ");
+            e.printStackTrace();
         }
     }
 }
