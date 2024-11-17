@@ -17,7 +17,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoundButtonClick" prefHeight="100.0" text="Sound">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoundButtonClick" prefHeight="100.0" text="Volume">
                <font>
                   <Font size="24.0" />
                </font>

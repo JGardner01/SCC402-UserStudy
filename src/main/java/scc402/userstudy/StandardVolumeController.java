@@ -3,26 +3,31 @@ package scc402.userstudy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class StandardHardwareController {
+import static java.lang.Math.round;
+
+public class StandardVolumeController {
     @FXML
     private Button backButton;
+    @FXML
+    private Slider volumeSlider;
+    @FXML
+    private Text volumeText;
+
+    @FXML
+    public void initialize() {
+        volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            volumeText.setText("Volume: " + round(newValue.intValue()));
+        });
+    }
 
     @FXML
     protected void onBackButtonClick() {
-        loadScene("standard-main-menu.fxml");
-    }
-
-    @FXML
-    protected void onSoundButtonClick() {
-        loadScene("standard-volume.fxml");
-    }
-
-    @FXML
-    protected void onConnectivityButtonClick() {
-        loadScene("standard-connectivity.fxml");
+        loadScene("hard-hardware-menu.fxml");
     }
 
     private void loadScene(String fxmlFile) {

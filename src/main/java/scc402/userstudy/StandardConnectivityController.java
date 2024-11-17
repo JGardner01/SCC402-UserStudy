@@ -3,26 +3,27 @@ package scc402.userstudy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-public class StandardHardwareController {
+public class StandardConnectivityController {
+
     @FXML
     private Button backButton;
 
     @FXML
     protected void onBackButtonClick() {
-        loadScene("standard-main-menu.fxml");
+        loadScene("standard-hardware-menu.fxml");
     }
 
     @FXML
-    protected void onSoundButtonClick() {
-        loadScene("standard-volume.fxml");
+    protected void onWifiButtonClick() {
+        loadScene("standard-wi-fi.fxml");
     }
 
     @FXML
-    protected void onConnectivityButtonClick() {
-        loadScene("standard-connectivity.fxml");
+    protected void onBluetoothButtonClick() {
+        loadScene("standard-bluetooth.fxml");
     }
 
     private void loadScene(String fxmlFile) {
