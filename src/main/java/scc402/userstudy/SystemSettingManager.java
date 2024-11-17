@@ -16,7 +16,7 @@ public class SystemSettingManager {
     static{
         settings.put(Setting.BLUETOOTH, false);
         settings.put(Setting.WIFI, false);
-        settings.put(Setting.VOLUME, false);
+        settings.put(Setting.VOLUME, 50);
     }
 
     public static Object getSetting(Setting setting){
@@ -26,6 +26,10 @@ public class SystemSettingManager {
     public static void toggleSetting(Setting setting){
         boolean currentValue = (Boolean) settings.get(setting);
         settings.put(setting, !currentValue);
+    }
+
+    public static void adjustVolume(int newVolume){
+        settings.put(Setting.VOLUME, newVolume);
     }
 
     public static void resetSettings(){

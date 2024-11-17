@@ -21,28 +21,35 @@ public class StandardBluetoothController {
     private Text statusText;
 
     @FXML
-    public void initialize() {
-        enabled = false;
-        statusText.setText(DISABLED);
-        bluetoothButton.setText("Enable Bluetooth");
-    }
-
-
-    @FXML
     protected void onBackButtonClick() {
         loadScene("standard-connectivity.fxml");
     }
 
     @FXML
+    public void initialize() {
+        updateBluetoothStatus();
+
+        /*
+        enabled = false;
+        statusText.setText(DISABLED);
+        bluetoothButton.setText("Enable Bluetooth");
+         */
+    }
+
+    @FXML
     protected void changeStatus() {
-        if (!enabled){
+        SystemSettingManager.toggleSetting(SystemSettingManager.Setting.BLUETOOTH);
+        updateBluetoothStatus();
+    }
+
+    private void updateBluetoothStatus(){
+        boolean enabled = (Boolean) SystemSettingManager.getSetting(SystemSettingManager.Setting.BLUETOOTH);
+        if (enabled){
             statusText.setText(ENABLED);
             bluetoothButton.setText("Disable Bluetooth");
-            enabled = true;
         } else {
             statusText.setText(DISABLED);
             bluetoothButton.setText("Enable Bluetooth");
-            enabled = false;
         }
     }
 

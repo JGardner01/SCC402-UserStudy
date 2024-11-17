@@ -21,27 +21,29 @@ public class StandardWiFiController {
     private Text statusText;
 
     @FXML
-    public void initialize() {
-        enabled = false;
-        statusText.setText(DISABLED);
-        wifiButton.setText("Enable Wi-Fi");
-    }
-
-    @FXML
     protected void onBackButtonClick() {
         loadScene("standard-connectivity.fxml");
     }
 
     @FXML
+    public void initialize() {
+        updateWifiStatus();
+    }
+
+    @FXML
     protected void changeStatus() {
-        if (!enabled){
+        SystemSettingManager.toggleSetting(SystemSettingManager.Setting.WIFI);
+        updateWifiStatus();
+    }
+
+    private void updateWifiStatus(){
+        boolean enabled = (Boolean) SystemSettingManager.getSetting(SystemSettingManager.Setting.WIFI);
+        if (enabled){
             statusText.setText(ENABLED);
             wifiButton.setText("Disable Wi-Fi");
-            enabled = true;
         } else {
             statusText.setText(DISABLED);
             wifiButton.setText("Enable Wi-Fi");
-            enabled = false;
         }
     }
 

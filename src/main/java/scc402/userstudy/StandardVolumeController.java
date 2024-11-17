@@ -20,14 +20,23 @@ public class StandardVolumeController {
 
     @FXML
     public void initialize() {
+        updateVolumeStatus();
         volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
             volumeText.setText("Volume: " + round(newValue.intValue()));
+            SystemSettingManager.adjustVolume(newValue.intValue());
         });
     }
 
     @FXML
     protected void onBackButtonClick() {
         loadScene("standard-hardware-menu.fxml");
+    }
+
+    private void updateVolumeStatus(){
+        double volume = ((Number) SystemSettingManager.getSetting(SystemSettingManager.Setting.VOLUME)).doubleValue();
+        volumeSlider.setValue(volume);
+        volumeText.setText("Volume: " + round(volume));
+
     }
 
     private void loadScene(String fxmlFile) {
