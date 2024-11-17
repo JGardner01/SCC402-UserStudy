@@ -27,7 +27,7 @@ public class StandardVolumeController {
 
     @FXML
     protected void onBackButtonClick() {
-        loadScene("hard-hardware-menu.fxml");
+        loadScene("standard-hardware-menu.fxml");
     }
 
     private void loadScene(String fxmlFile) {

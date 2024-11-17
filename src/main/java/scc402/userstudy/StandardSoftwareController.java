@@ -15,14 +15,14 @@ public class StandardSoftwareController {
         loadScene("standard-main-menu.fxml");
     }
 
-    /*
-
-    TO BE IMPLEMENTED
 
     @FXML
-    protected void () {
-        loadScene("standard-sound-menu.fxml");
+    protected void onNotificationsButtonClick() {
+        loadScene("standard-notifications.fxml");
     }
+
+    /*
+    TO BE IMPLEMENTED
 
     @FXML
     protected void () {
