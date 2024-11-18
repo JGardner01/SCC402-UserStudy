@@ -4,7 +4,7 @@
 
 **Task Ends:** On Bluetooth Enabled
 
-**Click Not Registering On Buttons** ...
+**Click Not Registering On Buttons:** Hardware (Index = 0, Threshold = 2), Bluetooth (Index = 1, Threshold = 1)
 
 ## Task 2 (Unintended navigation)
 **Instructions:** Navigate and 

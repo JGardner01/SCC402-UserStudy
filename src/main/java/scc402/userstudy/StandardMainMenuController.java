@@ -26,7 +26,10 @@ public class StandardMainMenuController {
     @FXML
     protected void onHardwareButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("standard-hardware-menu.fxml");
+
+        if (!TaskManager.clickNotRegistered(0, 2)){
+            loadScene("standard-hardware-menu.fxml");
+        }
     }
 
     @FXML

@@ -26,7 +26,9 @@ public class StandardConnectivityController {
     @FXML
     protected void onBluetoothButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("standard-bluetooth.fxml");
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            loadScene("standard-bluetooth.fxml");
+        }
     }
 
     private void loadScene(String fxmlFile) {

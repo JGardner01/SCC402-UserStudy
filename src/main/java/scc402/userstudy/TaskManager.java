@@ -5,8 +5,23 @@ public class TaskManager {
     public static final String task2Instructions = "";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
+    //not sure how many we need
+    private static int [] ignoreButtonCounts = {0, 0, 0};
 
-
+    public static boolean clickNotRegistered(int index, int threshold){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST1) {
+            ignoreButtonCounts[index]++;
+            if (ignoreButtonCounts[index] <= threshold) {
+                System.out.println("Click ignored");
+                return true;
+            } else {
+                System.out.println("Click processed");
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
 
     public static void startTask(){
         /* NEEDS WORK HERE
