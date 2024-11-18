@@ -25,16 +25,19 @@ public class StandardMainMenuController {
 
     @FXML
     protected void onHardwareButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-hardware-menu.fxml");
     }
 
     @FXML
     protected void onSoftwareButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-software-menu.fxml");
     }
 
     @FXML
     protected void onAboutButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-about.fxml");
     }
 

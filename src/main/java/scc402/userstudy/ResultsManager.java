@@ -3,15 +3,14 @@ package scc402.userstudy;
 import java.util.HashMap;
 
 public class ResultsManager {
-    private static boolean trackingClickCount;
-
     private static long startTime;
     private static HashMap<String, Long> completionTime = new HashMap<>();
     private static HashMap<String, Integer> clickCount = new HashMap<>();
+    private static int clickCounter = 0;
 
-    public static void startRecording(String taskName){
+    public static void startRecording(){
         startTime = System.currentTimeMillis();
-        clickCount.put(taskName, 0);
+        clickCounter = 0;
         System.out.println("Timer and click count started:");
     }
 
@@ -19,19 +18,15 @@ public class ResultsManager {
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         completionTime.put(taskName, duration);
+        clickCount.put(taskName, clickCounter);
         startTime = 0;
+        clickCounter = 0;
         System.out.println("Task " + taskName + " completed in " + duration + " ms.");
     }
 
     //track specific buttons, all buttons or mouse event listener
-    public static void incrementClickCount(String taskName) {
-        if (trackingClickCount) {
-            clickCount.put(taskName, clickCount.getOrDefault(taskName, 0) + 1);
-        }
-    }
-
-    public static void trackClickCount(boolean enabled){
-        trackClickCount(enabled);
+    public static void incrementClickCount() {
+        clickCounter++;
     }
 
     //export results to CSV be implemented later

@@ -22,6 +22,7 @@ public class StandardWiFiController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-connectivity.fxml");
     }
 

@@ -13,16 +13,19 @@ public class StandardConnectivityController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-hardware-menu.fxml");
     }
 
     @FXML
     protected void onWifiButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-wi-fi.fxml");
     }
 
     @FXML
     protected void onBluetoothButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-bluetooth.fxml");
     }
 

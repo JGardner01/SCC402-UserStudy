@@ -12,16 +12,19 @@ public class StandardHardwareController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-main-menu.fxml");
     }
 
     @FXML
     protected void onSoundButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-volume.fxml");
     }
 
     @FXML
     protected void onConnectivityButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-connectivity.fxml");
     }
 

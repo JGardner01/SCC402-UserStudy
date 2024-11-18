@@ -12,6 +12,7 @@ public class StandardAboutController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-main-menu.fxml");
     }
 

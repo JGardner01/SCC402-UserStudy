@@ -30,6 +30,7 @@ public class StandardNotificationsController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-software-menu.fxml");
     }
 

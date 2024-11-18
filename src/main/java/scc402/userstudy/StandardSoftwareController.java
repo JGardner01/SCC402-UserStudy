@@ -12,12 +12,14 @@ public class StandardSoftwareController {
 
     @FXML
     protected void onBackButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-main-menu.fxml");
     }
 
 
     @FXML
     protected void onNotificationsButtonClick() {
+        ResultsManager.incrementClickCount();
         loadScene("standard-notifications.fxml");
     }
 
@@ -26,6 +28,7 @@ public class StandardSoftwareController {
 
     @FXML
     protected void () {
+        ResultsManager.incrementClickCount();
         loadScene("standard-connectivity-page.fxml");
     }
     */

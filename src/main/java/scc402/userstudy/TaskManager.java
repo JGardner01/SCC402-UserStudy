@@ -6,6 +6,8 @@ public class TaskManager {
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
 
+
+
     public static void startTask(){
         /* NEEDS WORK HERE
         if (StateManager.getCurrentTest() != StateManager.Test.TEST1 && StateManager.getCurrentTest() != StateManager.Test.TEST2){
@@ -20,7 +22,7 @@ public class TaskManager {
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
         System.out.println(taskName);
-        ResultsManager.startRecording(taskName);
+        ResultsManager.startRecording();
 
     }
 
