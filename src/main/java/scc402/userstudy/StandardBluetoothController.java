@@ -41,6 +41,7 @@ public class StandardBluetoothController {
     protected void changeStatus() {
         SystemSettingManager.toggleSetting(SystemSettingManager.Setting.BLUETOOTH);
         updateBluetoothStatus();
+        TaskManager.endTask1();
     }
 
     private void updateBluetoothStatus(){
