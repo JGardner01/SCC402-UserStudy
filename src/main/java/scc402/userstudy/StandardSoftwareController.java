@@ -23,15 +23,6 @@ public class StandardSoftwareController {
         loadScene("standard-notifications.fxml");
     }
 
-    /*
-    TO BE IMPLEMENTED
-
-    @FXML
-    protected void () {
-        ResultsManager.incrementClickCount();
-        loadScene("standard-connectivity-page.fxml");
-    }
-    */
 
     private void loadScene(String fxmlFile) {
         try {

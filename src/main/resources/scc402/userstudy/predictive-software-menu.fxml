@@ -12,9 +12,19 @@
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="384.0" prefWidth="320.0" spacing="25.0">
          <children>
-            <Button fx:id="backButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="100.0" prefWidth="320.0" text="Back">
+            <Button fx:id="backButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
                <font>
                   <Font name="Calibri" size="24.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNotificationsButtonClick" prefHeight="100.0" text="Back">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNotificationsButtonClick" prefHeight="100.0" text="About (HIDDEN)">
+               <font>
+                  <Font size="24.0" />
                </font>
             </Button>
             <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNotificationsButtonClick" prefHeight="100.0" text="Notifications">

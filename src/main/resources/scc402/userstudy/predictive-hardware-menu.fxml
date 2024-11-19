@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.StandardSoftwareController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="384.0" prefWidth="320.0" spacing="25.0">
          <children>
@@ -17,7 +17,22 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNotificationsButtonClick" prefHeight="100.0" text="Notifications">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoundButtonClick" prefHeight="100.0" text="Software (HIDDEN)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onConnectivityButtonClick" prefHeight="100.0" text="Connectivity (HIDDEN)">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoundButtonClick" prefHeight="100.0" text="Volume">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onConnectivityButtonClick" prefHeight="100.0" text="Connectivity">
                <font>
                   <Font size="24.0" />
                </font>
@@ -30,7 +45,7 @@
       <Line endX="-105.41421508789062" endY="719.2929077148438" startX="-100.0" />
       <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="962.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Software">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hardware">
                <font>
                   <Font name="Calibri" size="34.0" />
                </font>
