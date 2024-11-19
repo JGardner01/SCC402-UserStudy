@@ -2,20 +2,20 @@
 ## Task 1 (Click not registering)
 **Instructions:** Navigate and enable Bluetooth. 
 
-**Task Ends:** On main menu.
+**Task Starts:** On main menu.
 
 **Task Ends:** On Bluetooth enabled.
 
 **Click Not Registering On Buttons:** Hardware (Index = 0, Threshold = 1), Bluetooth (Index = 1, Threshold = 1)
 
-## Task 2 (Unintended navigation)
+## Task 2 (Interface running slow/not responding)
 **Instructions:** Navigate and enable Wi-FI.
 
-**Task Ends:** On Bluetooth page.
+**Task Starts:** On Bluetooth page.
 
 **Task Ends:** On Wi-Fi enabled.
 
-**Unintended Navigation On Buttons** ...
+**Unintended Navigation On Buttons** Bluetooth back button (Threshold = 2)
 
 
 ## Notes
