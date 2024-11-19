@@ -20,3 +20,6 @@
 
 ## Notes
 1. Click counter is only updated on navigation button clicks, change status buttons (wifi, bluetooth, volume, notifications etc) are not included as not relevant to the study.
+
+# MUST CHANGE BACK
+- State of mode, UI and test. 
