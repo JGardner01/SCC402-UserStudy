@@ -1,5 +1,6 @@
 package scc402.userstudy;
 
+import java.io.FileWriter;
 import java.util.HashMap;
 
 public class ResultsManager {
@@ -29,9 +30,29 @@ public class ResultsManager {
         clickCounter++;
     }
 
+
+    //
+    //NEEDS TESTING AT THE END
     //export results to CSV be implemented later
     public static void exportResults(){
         System.out.println("Exporting Results...");
 
+        try (FileWriter fileWriter = new FileWriter("results.csv")) {
+            //write  the header
+            fileWriter.write("Task Name,Completion Time (ms),Click Count\n");
+
+            //write the data
+            for (String taskName : completionTime.keySet()) {
+                long duration = completionTime.get(taskName);
+                int clicks = clickCount.getOrDefault(taskName, 0);
+                fileWriter.write(taskName + "," + duration + "," + clicks + "\n");
+            }
+
+            System.out.println("Results exported successfully to results.csv.");
+
+        } catch (Exception e) {
+            System.err.println("Failed to export results.");
+            //print results to console
+        }
     }
 }

@@ -65,6 +65,29 @@ public class TaskManager {
             //end testing -> dont route
             //export results
             System.out.println("Testing completed");
+            ResultsManager.exportResults();
+
+            try {
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                stage.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            try{
+                FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("ending-user-study.fxml"));
+                Scene taskCompleteScene = new Scene(fxmlLoader.load());
+
+                Stage taskCompleteStage = new Stage();
+                taskCompleteStage.setTitle("User Study Complete");
+
+                taskCompleteStage.setScene(taskCompleteScene);
+                taskCompleteStage.showAndWait();
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+
         }
         //check if test 1 is complete -> change to test 2
         else if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
@@ -119,10 +142,6 @@ public class TaskManager {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void exportResults(){
-
     }
 
     public static void displayTaskComplete(){
