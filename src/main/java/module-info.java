@@ -7,6 +7,7 @@ module scc402.userstudy {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens scc402.userstudy to javafx.fxml;
     exports scc402.userstudy;

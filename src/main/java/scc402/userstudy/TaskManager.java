@@ -1,15 +1,16 @@
 package scc402.userstudy;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.swing.plaf.synth.SynthStyleFactory;
+
 public class TaskManager {
-    public static final String task1Instructions = "Navigate and enable Bluetooth.";
-    public static final String task2Instructions = "Test 2 Instructions";
+    public static final String task1Instructions = "Navigate the interface and enable Bluetooth.";
+    public static final String task2Instructions = "Navigate the interface and enable Wi-Fi";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
     //task tracking variables
@@ -17,7 +18,7 @@ public class TaskManager {
     //private static int [] //TASK 2
 
     public static boolean clickNotRegistered(int index, int threshold){
-        if (StateManager.getCurrentTest() == StateManager.Test.TEST1) {
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             ignoreButtonCounts[index]++;
             if (ignoreButtonCounts[index] <= threshold) {
                 System.out.println("Click ignored");
@@ -36,13 +37,13 @@ public class TaskManager {
 
 
     public static void endTask1(Button backButton){
-        if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             endTask(backButton);
         }
     }
 
     public static void endTask2(Button backButton){
-        if (StateManager.getCurrentTest() == StateManager.Test.TEST2){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             endTask(backButton);
         }
     }
@@ -96,11 +97,13 @@ public class TaskManager {
 
             //reset variables
             SystemSettingManager.resetSettings();
+            //keep consistent for user -> enable bluetooth as the same as last task
+            SystemSettingManager.toggleSetting(SystemSettingManager.Setting.BLUETOOTH);
 
-            //load ui again
+            //load ui again - On bluetooth page
             if (StateManager.getCurrentUI() == StateManager.UI.STANDARD) {
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("standard-main-menu.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("standard-bluetooth.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = (Stage) backButton.getScene().getWindow();
                     stage.setScene(scene);
