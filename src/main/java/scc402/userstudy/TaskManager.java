@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class TaskManager {
     public static final String task1Instructions = "Navigate and enable Bluetooth.";
-    public static final String task2Instructions = "";
+    public static final String task2Instructions = "Test 2 Instructions";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
     //task tracking variables

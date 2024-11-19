@@ -19,9 +19,9 @@ public class ResultsManager {
         long duration = endTime - startTime;
         completionTime.put(taskName, duration);
         clickCount.put(taskName, clickCounter);
+        System.out.println("Task " + taskName + " completed in " + duration + " ms. Completed in " + clickCounter + " clicks.");
         startTime = 0;
         clickCounter = 0;
-        System.out.println("Task " + taskName + " completed in " + duration + " ms.");
     }
 
     //track specific buttons, all buttons or mouse event listener
