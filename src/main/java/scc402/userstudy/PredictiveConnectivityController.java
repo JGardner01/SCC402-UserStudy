@@ -19,8 +19,10 @@ public class PredictiveConnectivityController {
 
     @FXML
     public void initialize() {
-        hiddenHardwareButton.setOpacity(0);
-        hiddenVolumeButton.setOpacity(0);
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            hiddenHardwareButton.setOpacity(0);
+            hiddenVolumeButton.setOpacity(0);
+        }
     }
 
     @FXML

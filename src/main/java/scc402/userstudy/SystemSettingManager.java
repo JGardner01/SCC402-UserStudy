@@ -7,7 +7,8 @@ public class SystemSettingManager {
     public enum Setting {
         BLUETOOTH,
         WIFI,
-        VOLUME
+        VOLUME,
+        NOTIFICATION
     }
 
     private static final HashMap<Setting, Object> settings = new HashMap<>();
@@ -17,6 +18,7 @@ public class SystemSettingManager {
         settings.put(Setting.BLUETOOTH, false);
         settings.put(Setting.WIFI, false);
         settings.put(Setting.VOLUME, 50);
+        settings.put(Setting.NOTIFICATION, false);
     }
 
     public static Object getSetting(Setting setting){
@@ -36,5 +38,6 @@ public class SystemSettingManager {
         settings.put(Setting.BLUETOOTH, false);
         settings.put(Setting.WIFI, false);
         settings.put(Setting.VOLUME, 50);
+        settings.put(Setting.NOTIFICATION, false);
     }
 }

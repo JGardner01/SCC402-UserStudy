@@ -22,4 +22,6 @@
 1. Click counter is only updated on navigation button clicks, change status buttons (wifi, bluetooth, volume, notifications etc) are not included as not relevant to the study.
 
 # MUST CHANGE BACK
-- State of mode, UI and test. 
+- State of mode, UI and test.
+# To Do
+- Make invisible buttons visible in demo

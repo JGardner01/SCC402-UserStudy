@@ -27,7 +27,11 @@ public class PredictiveBluetoothController {
     @FXML
     public void initialize() {
         disabledButton1.setVisible(false);
-        hiddenWiFiButton.setOpacity(0);
+
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            hiddenWiFiButton.setOpacity(0);
+        }
+
         updateBluetoothStatus();
     }
 

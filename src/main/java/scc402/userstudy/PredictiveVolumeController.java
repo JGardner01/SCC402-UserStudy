@@ -32,8 +32,11 @@ public class PredictiveVolumeController {
     public void initialize() {
         disabledButton1.setVisible(false);
         disabledButton2.setVisible(false);
-        hiddenHardwareButton.setOpacity(0);
-        hiddenConnectivityButton.setOpacity(0);
+
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            hiddenHardwareButton.setOpacity(0);
+            hiddenConnectivityButton.setOpacity(0);
+        }
 
         updateVolumeStatus();
         volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {

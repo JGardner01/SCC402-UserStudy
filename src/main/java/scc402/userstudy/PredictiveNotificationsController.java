@@ -33,7 +33,10 @@ public class PredictiveNotificationsController {
     public void initialize() {
         disabledButton1.setVisible(false);
         disabledButton2.setVisible(false);
-        hiddenSoftwareButton.setOpacity(0);
+
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            hiddenSoftwareButton.setOpacity(0);
+        }
 
         enabled = false;
         statusText.setText(DISABLED);

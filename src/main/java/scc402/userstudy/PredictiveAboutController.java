@@ -18,8 +18,10 @@ public class PredictiveAboutController {
 
     @FXML
     public void initialize() {
-        hiddenHardwareButton.setOpacity(0);
-        hiddenSoftwareButton.setOpacity(0);
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST){
+            hiddenHardwareButton.setOpacity(0);
+            hiddenSoftwareButton.setOpacity(0);
+        }
     }
 
     @FXML
