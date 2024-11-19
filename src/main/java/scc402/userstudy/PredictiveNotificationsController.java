@@ -7,58 +7,61 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class PredictiveWiFiController {
+public class PredictiveNotificationsController {
+
     private final String ENABLED = "Status: Enabled";
     private final String DISABLED = "Status: Disabled";
+
+    private boolean enabled;
 
     @FXML
     private Button backButton;
     @FXML
-    private Button wifiButton;
+    private Button notificationButton;
     @FXML
     private Text statusText;
 
-    //disabled button
+    //hidden and disabled buttons
     @FXML
     private Button disabledButton1;
     @FXML
-    private Button hiddenBluetoothButton;
+    private Button hiddenSoftwareButton;
+    @FXML
+    private Button disabledButton2;
 
     @FXML
     public void initialize() {
         disabledButton1.setVisible(false);
-        hiddenBluetoothButton.setOpacity(0);
-        updateWifiStatus();
+        disabledButton2.setVisible(false);
+        hiddenSoftwareButton.setOpacity(0);
+
+        enabled = false;
+        statusText.setText(DISABLED);
+        notificationButton.setText("Enable Notifications");
+    }
+
+    @FXML
+    protected void onHiddenSoftwareButtonClick() {
+        ResultsManager.incrementClickCount();
+        loadScene("predictive-software-menu.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("predictive-connectivity.fxml");
+        loadScene("predictive-software-menu.fxml");
     }
-
-    @FXML
-    protected void onHiddenBluetoothButtonClick() {
-        ResultsManager.incrementClickCount();
-        loadScene("predictive-bluetooth.fxml");
-    }
-
 
     @FXML
     protected void changeStatus() {
-        SystemSettingManager.toggleSetting(SystemSettingManager.Setting.WIFI);
-        updateWifiStatus();
-        TaskManager.endTask2(backButton);
-    }
-
-    private void updateWifiStatus(){
-        boolean enabled = (Boolean) SystemSettingManager.getSetting(SystemSettingManager.Setting.WIFI);
-        if (enabled){
+        if (!enabled){
             statusText.setText(ENABLED);
-            wifiButton.setText("Disable Wi-Fi");
+            notificationButton.setText("Disable Notifications");
+            enabled = true;
         } else {
             statusText.setText(DISABLED);
-            wifiButton.setText("Enable Wi-Fi");
+            notificationButton.setText("Enable Notifications");
+            enabled = false;
         }
     }
 

@@ -3,10 +3,10 @@ package scc402.userstudy;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
-public class PredictiveSoftwareController {
+public class PredictiveAboutController {
     @FXML
     private Button backButton;
 
@@ -14,12 +14,12 @@ public class PredictiveSoftwareController {
     @FXML
     private Button hiddenHardwareButton;
     @FXML
-    private Button hiddenAboutButton;
+    private Button hiddenSoftwareButton;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         hiddenHardwareButton.setOpacity(0);
-        hiddenAboutButton.setOpacity(0);
+        hiddenSoftwareButton.setOpacity(0);
     }
 
     @FXML
@@ -29,23 +29,16 @@ public class PredictiveSoftwareController {
     }
 
     @FXML
+    protected void onHiddenSoftwareButtonClick(){
+        ResultsManager.incrementClickCount();
+        loadScene("predictive-software-menu.fxml");
+    }
+
+    @FXML
     protected void onBackButtonClick() {
         ResultsManager.incrementClickCount();
         loadScene("predictive-main-menu.fxml");
     }
-
-    @FXML
-    protected void onHiddenAboutButtonClick() {
-        ResultsManager.incrementClickCount();
-        loadScene("predictive-about.fxml");
-    }
-
-    @FXML
-    protected void onNotificationsButtonClick() {
-        ResultsManager.incrementClickCount();
-        loadScene("predictive-notifications.fxml");
-    }
-
 
     private void loadScene(String fxmlFile) {
         try {

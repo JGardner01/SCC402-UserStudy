@@ -16,6 +16,11 @@ public class PredictiveHardwareController {
     @FXML
     private Button hiddenAboutButton;
 
+    @FXML
+    public void initialize(){
+        hiddenSoftwareButton.setOpacity(0);
+        hiddenAboutButton.setOpacity(0);
+    }
 
     @FXML
     protected void onBackButtonClick() {

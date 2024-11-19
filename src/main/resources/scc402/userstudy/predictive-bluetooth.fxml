@@ -17,7 +17,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenWiFiButton" prefHeight="100.0" prefWidth="320.0" text="Wi-Fi (HIDDEN)">
+            <Button fx:id="hiddenWiFiButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenWiFiButton" prefHeight="100.0" prefWidth="320.0" text="Wi-Fi (HIDDEN)">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

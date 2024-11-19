@@ -18,6 +18,12 @@ public class PredictiveConnectivityController {
     private Button hiddenVolumeButton;
 
     @FXML
+    public void initialize() {
+        hiddenHardwareButton.setOpacity(0);
+        hiddenVolumeButton.setOpacity(0);
+    }
+
+    @FXML
     protected void onHiddenHardwareButton(){
         ResultsManager.incrementClickCount();
         loadScene("predictive-hardware-menu.fxml");
@@ -48,7 +54,7 @@ public class PredictiveConnectivityController {
     @FXML
     protected void onBackButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("standard-hardware-menu.fxml");
+        loadScene("predictive-hardware-menu.fxml");
     }
 
     private void loadScene(String fxmlFile) {

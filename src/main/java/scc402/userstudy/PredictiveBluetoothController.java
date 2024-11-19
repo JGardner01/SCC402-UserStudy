@@ -25,6 +25,13 @@ public class PredictiveBluetoothController {
     private Button hiddenWiFiButton;
 
     @FXML
+    public void initialize() {
+        disabledButton1.setVisible(false);
+        hiddenWiFiButton.setOpacity(0);
+        updateBluetoothStatus();
+    }
+
+    @FXML
     protected void onHiddenWiFiButton() {
         ResultsManager.incrementClickCount();
         loadScene("predictive-wi-fi.fxml");
@@ -48,10 +55,6 @@ public class PredictiveBluetoothController {
         }
     }
 
-    @FXML
-    public void initialize() {
-        updateBluetoothStatus();
-    }
 
     @FXML
     protected void changeStatus() {
