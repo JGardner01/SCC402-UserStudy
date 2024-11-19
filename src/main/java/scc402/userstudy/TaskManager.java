@@ -26,13 +26,23 @@ public class TaskManager {
                 System.out.println("Click processed");
                 return false;
             }
-        }else {
+        } else {
             return false;
         }
     }
 
+    //running slow function
+    //public static boolean
+
+
     public static void endTask1(Button backButton){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
+            endTask(backButton);
+        }
+    }
+
+    public static void endTask2(Button backButton){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST2){
             endTask(backButton);
         }
     }
@@ -86,24 +96,7 @@ public class TaskManager {
             }
 
             //load completed task scene
-            try{
-                FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("task-complete.fxml"));
-                Scene taskCompleteScene = new Scene(fxmlLoader.load());
-
-                Stage taskCompleteStage = new Stage();
-                taskCompleteStage.setTitle("Task Complete");
-                taskCompleteStage.initModality(Modality.APPLICATION_MODAL);
-
-                taskCompleteStage.setOnCloseRequest(event -> {
-                    event.consume(); // Prevents the window from closing
-                });
-
-                taskCompleteStage.setScene(taskCompleteScene);
-                taskCompleteStage.showAndWait();
-
-            } catch (Exception e){
-                e.printStackTrace();
-            }
+            displayTaskComplete();
 
             //open task complete window -> on close open next task window
         }
@@ -111,12 +104,43 @@ public class TaskManager {
         else if (StateManager.getCurrentUI() == StateManager.UI.STANDARD && StateManager.getCurrentTest() == StateManager.Test.TEST2){
             StateManager.setCurrentMode(StateManager.Mode.DEMO);
             StateManager.setCurrentUI(StateManager.UI.PREDICTIVE);
-            //open task complete window
-            //reset variables
-            //open start screen
-            //set task variables in predictive ui start button
-            //load predictive ui here VVVVVVVVVV
 
+            //reset variables
+            SystemSettingManager.resetSettings();
+
+            //load completed task scene
+            displayTaskComplete();
+
+            //open start screen
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("start-scene.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = (Stage) backButton.getScene().getWindow();
+                stage.setScene(scene);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void displayTaskComplete(){
+        try{
+            FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("task-complete.fxml"));
+            Scene taskCompleteScene = new Scene(fxmlLoader.load());
+
+            Stage taskCompleteStage = new Stage();
+            taskCompleteStage.setTitle("Task Complete");
+            taskCompleteStage.initModality(Modality.APPLICATION_MODAL);
+
+            taskCompleteStage.setOnCloseRequest(event -> {
+                event.consume(); // Prevents the window from closing
+            });
+
+            taskCompleteStage.setScene(taskCompleteScene);
+            taskCompleteStage.showAndWait();
+
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
