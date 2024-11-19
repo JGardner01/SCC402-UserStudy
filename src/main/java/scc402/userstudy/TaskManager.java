@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.synth.SynthStyleFactory;
+import java.util.Arrays;
 
 public class TaskManager {
     public static final String task1Instructions = "Navigate the interface and enable Bluetooth.";
@@ -14,8 +14,8 @@ public class TaskManager {
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
     //task tracking variables
-    private static int [] ignoreButtonCounts = {0, 0, 0}; //TASK 1 not sure how many we need
-    //private static int [] //TASK 2
+    private static int [] ignoreButtonCounts = {0, 0}; //TASK 1 - 2 buttons not registering
+    private static int runslowCount = 0; //TASK 2 - system running slow
 
     public static boolean clickNotRegistered(int index, int threshold){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
@@ -33,17 +33,36 @@ public class TaskManager {
     }
 
     //running slow function
-    //public static boolean
+    public static boolean runningSlow(int threshold){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            runslowCount++;
+            if (runslowCount >= threshold) {
+                System.out.println("Running Slow");
+                return true;
+            } else {
+                System.out.println("Processed");
+                return false;
+            }
+        } else{
+            return false;
+        }
+    }
 
 
     public static void endTask1(Button backButton){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            //reset task variables
+            Arrays.fill(ignoreButtonCounts, 0);
+
             endTask(backButton);
         }
     }
 
     public static void endTask2(Button backButton){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+            //reset task variable
+            runslowCount = 0;
+
             endTask(backButton);
         }
     }
