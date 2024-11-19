@@ -62,7 +62,7 @@ public class TaskManager {
 
         //check if final predictive ui test is complete -> end testing and present finish screen
         if (StateManager.getCurrentUI() == StateManager.UI.PREDICTIVE && StateManager.getCurrentMode() == StateManager.Mode.TEST && StateManager.getCurrentTest() == StateManager.Test.TEST2) {
-            //end testing
+            //end testing -> dont route
             //export results
             System.out.println("Testing completed");
         }
@@ -97,8 +97,6 @@ public class TaskManager {
 
             //load completed task scene
             displayTaskComplete();
-
-            //open task complete window -> on close open next task window
         }
         //check if test 2 of standard ui is completed -> change to predictive UI
         else if (StateManager.getCurrentUI() == StateManager.UI.STANDARD && StateManager.getCurrentTest() == StateManager.Test.TEST2){
@@ -121,6 +119,10 @@ public class TaskManager {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void exportResults(){
+
     }
 
     public static void displayTaskComplete(){

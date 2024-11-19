@@ -16,9 +16,9 @@ public class StateManager {
         TEST2
     }
 
-    private static UI currentUI;
-    private static Mode currentMode;
-    private static Test currentTest;
+    private static UI currentUI = UI.STANDARD;
+    private static Mode currentMode = Mode.DEMO;
+    private static Test currentTest = Test.TEST1;
 
     public static UI getCurrentUI(){
         return currentUI;
