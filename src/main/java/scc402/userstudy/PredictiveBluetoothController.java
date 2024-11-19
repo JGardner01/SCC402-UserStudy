@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class StandardBluetoothController {
+public class PredictiveBluetoothController {
     private final String ENABLED = "Status: Enabled";
     private final String DISABLED = "Status: Disabled";
 
@@ -18,17 +18,33 @@ public class StandardBluetoothController {
     @FXML
     private Text statusText;
 
+    //hidden and disabled buttons
+    @FXML
+    private Button disabledButton1;
+    @FXML
+    private Button hiddenWiFiButton;
+
+    @FXML
+    protected void onHiddenWiFiButton() {
+        ResultsManager.incrementClickCount();
+        loadScene("predictive-wi-fi.fxml");
+    }
+
     @FXML
     protected void onBackButtonClick() {
         ResultsManager.incrementClickCount();
         TaskManager.RunSlow status = TaskManager.runningSlow(2);
         System.out.println(status);
+
+        //
+        //NEEDS TO BE UPDATED
+        //
         if (status == TaskManager.RunSlow.SLOW){
             //ignore click
         } else if (status == TaskManager.RunSlow.BACK){
-            loadScene("standard-main-menu.fxml");
+            loadScene("predictive-main-menu.fxml");
         } else{
-            loadScene("standard-connectivity.fxml");
+            loadScene("predictive-connectivity.fxml");
         }
     }
 
