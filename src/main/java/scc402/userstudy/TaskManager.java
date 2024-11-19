@@ -9,6 +9,9 @@ import javafx.stage.Stage;
 import java.util.Arrays;
 
 public class TaskManager {
+
+    //TODO Task between click and on which click the error occurred
+
     public enum RunSlow{
         NORMAL, //work as normal
         SLOW,   //act slow dont process
