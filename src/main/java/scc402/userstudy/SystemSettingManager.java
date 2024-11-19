@@ -35,6 +35,6 @@ public class SystemSettingManager {
     public static void resetSettings(){
         settings.put(Setting.BLUETOOTH, false);
         settings.put(Setting.WIFI, false);
-        settings.put(Setting.VOLUME, false);
+        settings.put(Setting.VOLUME, 50);
     }
 }

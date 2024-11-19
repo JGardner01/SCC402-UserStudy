@@ -29,19 +29,13 @@ public class StandardBluetoothController {
     @FXML
     public void initialize() {
         updateBluetoothStatus();
-
-        /*
-        enabled = false;
-        statusText.setText(DISABLED);
-        bluetoothButton.setText("Enable Bluetooth");
-         */
     }
 
     @FXML
     protected void changeStatus() {
         SystemSettingManager.toggleSetting(SystemSettingManager.Setting.BLUETOOTH);
         updateBluetoothStatus();
-        TaskManager.endTask1();
+        TaskManager.endTask1(backButton);
     }
 
     private void updateBluetoothStatus(){
