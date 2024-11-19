@@ -35,6 +35,7 @@ public class StandardWiFiController {
     protected void changeStatus() {
         SystemSettingManager.toggleSetting(SystemSettingManager.Setting.WIFI);
         updateWifiStatus();
+        TaskManager.endTask2(backButton);
     }
 
     private void updateWifiStatus(){

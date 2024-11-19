@@ -9,6 +9,12 @@ import javafx.stage.Stage;
 import java.util.Arrays;
 
 public class TaskManager {
+    public enum RunSlow{
+        NORMAL, //work as normal
+        SLOW,   //act slow dont process
+        BACK    //send back to target page
+    }
+
     public static final String task1Instructions = "Navigate the interface and enable Bluetooth.";
     public static final String task2Instructions = "Navigate the interface and enable Wi-Fi";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
@@ -33,18 +39,22 @@ public class TaskManager {
     }
 
     //running slow function
-    public static boolean runningSlow(int threshold){
-        if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
+    //return number depending on mode
+    public static RunSlow runningSlow(int threshold){
+        if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             runslowCount++;
-            if (runslowCount >= threshold) {
+            if (runslowCount < threshold + 1) {
                 System.out.println("Running Slow");
-                return true;
-            } else {
+                return RunSlow.SLOW;
+            } else if (runslowCount == threshold + 1) {
+                System.out.println("Running Normal Again Send To Relevant Page");
+                return RunSlow.BACK;
+            }else {
                 System.out.println("Processed");
-                return false;
+                return RunSlow.NORMAL;
             }
         } else{
-            return false;
+            return RunSlow.NORMAL;
         }
     }
 
@@ -113,6 +123,7 @@ public class TaskManager {
         else if (StateManager.getCurrentTest() == StateManager.Test.TEST1){
             //change test
             StateManager.setCurrentTest(StateManager.Test.TEST2);
+            System.out.println("Changed to test 2");
 
             //reset variables
             SystemSettingManager.resetSettings();

@@ -23,7 +23,15 @@ public class StandardBluetoothController {
     @FXML
     protected void onBackButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("standard-connectivity.fxml");
+        TaskManager.RunSlow status = TaskManager.runningSlow(2);
+        System.out.println(status);
+        if (status == TaskManager.RunSlow.SLOW){
+            //ignore click
+        } else if (status == TaskManager.RunSlow.BACK){
+            loadScene("standard-main-menu.fxml");
+        } else{
+            loadScene("standard-connectivity.fxml");
+        }
     }
 
     @FXML
