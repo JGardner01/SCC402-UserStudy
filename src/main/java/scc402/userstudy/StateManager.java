@@ -19,7 +19,7 @@ public class StateManager {
     //
     //OVERRIDDEN MUST CHANGE BACK
     //
-    private static UI currentUI = UI.PREDICTIVE;
+    private static UI currentUI = UI.STANDARD;
     private static Mode currentMode = Mode.DEMO;
     private static Test currentTest = Test.TEST1;
 

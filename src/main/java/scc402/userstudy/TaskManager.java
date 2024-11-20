@@ -97,6 +97,13 @@ public class TaskManager {
     public static void endTask(Button backButton){
         ResultsManager.endRecording(taskName);
 
+        for (int i = 0; i < 4; i++){
+            if (ResultsManager.pastTasks[i].equals("")){
+                ResultsManager.pastTasks[i] = taskName;
+                break;
+            }
+        }
+
         //check if final predictive ui test is complete -> end testing and present finish screen
         if (StateManager.getCurrentUI() == StateManager.UI.PREDICTIVE && StateManager.getCurrentMode() == StateManager.Mode.TEST && StateManager.getCurrentTest() == StateManager.Test.TEST2) {
             //end testing -> dont route

@@ -13,6 +13,7 @@ public class ResultsManager {
     private static int clickCounter = 0;
     private static ArrayList<String[]> clickLogs = new ArrayList<>();
     private static long lastClickTime;
+    public static String[] pastTasks = {"", "", "", ""};
 
     public static void startRecording(){
         startTime = System.currentTimeMillis();
@@ -26,6 +27,7 @@ public class ResultsManager {
         long duration = endTime - startTime;
         completionTime.put(taskName, duration);
         clickCount.put(taskName, clickCounter);
+        System.out.println(clickCount.get(taskName));
         System.out.println("Task " + taskName + " completed in " + duration + " ms. Completed in " + clickCounter + " clicks.");
         startTime = 0;
         clickCounter = 0;
