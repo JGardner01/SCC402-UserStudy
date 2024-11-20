@@ -22,17 +22,36 @@ public class PredictiveBluetoothController {
     @FXML
     private Button disabledButton1;
     @FXML
+    private Button disabledButton2;
+    @FXML
+    private Button disabledButton3;
+    @FXML
+    private Button disabledButton4;
+    @FXML
+    private Button hiddenHardwareButton;
+    @FXML
     private Button hiddenWiFiButton;
 
     @FXML
     public void initialize() {
         disabledButton1.setVisible(false);
+        disabledButton2.setVisible(false);
+        disabledButton3.setVisible(false);
+        disabledButton4.setVisible(false);
 
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             hiddenWiFiButton.setOpacity(0);
+            hiddenHardwareButton.setOpacity(0);
         }
 
         updateBluetoothStatus();
+    }
+
+
+    @FXML
+    protected void onHiddenHardwareButton() {
+        ResultsManager.incrementClickCount();
+        loadScene("predictive-hardware-menu.fxml");
     }
 
     @FXML

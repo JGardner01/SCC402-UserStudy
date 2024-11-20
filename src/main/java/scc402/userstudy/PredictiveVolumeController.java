@@ -20,21 +20,27 @@ public class PredictiveVolumeController {
 
     //hidden and disabled buttons
     @FXML
-    private Button hiddenHardwareButton;
+    private Button hiddenMainMenuButton;
     @FXML
     private Button disabledButton1;
     @FXML
     private Button disabledButton2;
     @FXML
     private Button hiddenConnectivityButton;
+    @FXML
+    private Button disabledButton3;
+    @FXML
+    private Button disabledButton4;
 
     @FXML
     public void initialize() {
         disabledButton1.setVisible(false);
         disabledButton2.setVisible(false);
+        disabledButton3.setVisible(false);
+        disabledButton4.setVisible(false);
 
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
-            hiddenHardwareButton.setOpacity(0);
+            hiddenMainMenuButton.setOpacity(0);
             hiddenConnectivityButton.setOpacity(0);
         }
 
@@ -46,9 +52,9 @@ public class PredictiveVolumeController {
     }
 
     @FXML
-    protected void onHiddenHardwareButton() {
+    protected void onHiddenMainMenuButton() {
         ResultsManager.incrementClickCount();
-        loadScene("predictive-hardware-menu.fxml");
+        loadScene("predictive-main-menu.fxml");
     }
 
     @FXML

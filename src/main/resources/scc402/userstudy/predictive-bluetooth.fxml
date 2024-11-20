@@ -17,22 +17,22 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="disabledButton11" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
+            <Button fx:id="disabledButton2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="disabledButton12" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
+            <Button fx:id="disabledButton3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="disabledButton13" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
+            <Button fx:id="disabledButton4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="DISABLE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="disabledButton14" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
+            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButton" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="backButton4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="100.0" prefWidth="320.0" text="Back">
+            <Button fx:id="backButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="100.0" prefWidth="320.0" text="Back">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

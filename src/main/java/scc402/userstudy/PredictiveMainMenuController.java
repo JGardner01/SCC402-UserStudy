@@ -14,6 +14,17 @@ public class PredictiveMainMenuController {
     @FXML
     private Button startTestButton;
 
+    //disabled buttons
+    @FXML
+    private Button disabledButton1;
+    @FXML
+    private Button disabledButton2;
+    @FXML
+    private Button disabledButton3;
+    @FXML
+    private Button disabledButton4;
+
+
     @FXML
     public void initialize(){
         if (StateManager.getCurrentMode() == StateManager.Mode.DEMO){
@@ -21,6 +32,10 @@ public class PredictiveMainMenuController {
         } else{
             startTestButton.setVisible(false);
         }
+        disabledButton1.setVisible(false);
+        disabledButton2.setVisible(false);
+        disabledButton3.setVisible(false);
+        disabledButton4.setVisible(false);
     }
 
     @FXML

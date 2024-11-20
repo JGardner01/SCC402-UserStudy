@@ -13,22 +13,30 @@ public class PredictiveConnectivityController {
 
     //hidden buttons
     @FXML
-    private Button hiddenHardwareButton;
+    private Button hiddenMainMenuButton;
     @FXML
     private Button hiddenVolumeButton;
+
+    //disabled buttons
+    @FXML
+    private Button disabledButton1;
+    @FXML
+    private Button disabledButton2;
 
     @FXML
     public void initialize() {
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
-            hiddenHardwareButton.setOpacity(0);
+            hiddenMainMenuButton.setOpacity(0);
             hiddenVolumeButton.setOpacity(0);
         }
+        disabledButton1.setVisible(false);
+        disabledButton2.setVisible(false);
     }
 
     @FXML
-    protected void onHiddenHardwareButton(){
+    protected void onHiddenMainMenuButton(){
         ResultsManager.incrementClickCount();
-        loadScene("predictive-hardware-menu.fxml");
+        loadScene("predictive-main-menu.fxml");
 
     }
 

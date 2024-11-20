@@ -16,12 +16,20 @@ public class PredictiveHardwareController {
     @FXML
     private Button hiddenAboutButton;
 
+    //disabled buttons
+    @FXML
+    private Button disabledButton1;
+    @FXML
+    private Button disabledButton2;
+
     @FXML
     public void initialize(){
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             hiddenSoftwareButton.setOpacity(0);
             hiddenAboutButton.setOpacity(0);
         }
+        disabledButton1.setVisible(false);
+        disabledButton2.setVisible(false);
     }
 
     @FXML

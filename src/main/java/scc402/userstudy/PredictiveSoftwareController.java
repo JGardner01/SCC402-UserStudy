@@ -16,12 +16,23 @@ public class PredictiveSoftwareController {
     @FXML
     private Button hiddenAboutButton;
 
+    //disabled buttons
+    @FXML
+    private Button disabledButton1;
+    @FXML
+    private Button disabledButton2;
+    @FXML
+    private Button disabledButton3;
+
     @FXML
     public void initialize(){
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             hiddenHardwareButton.setOpacity(0);
             hiddenAboutButton.setOpacity(0);
         }
+        disabledButton1.setVisible(false);
+        disabledButton2.setVisible(false);
+        disabledButton3.setVisible(false);
     }
 
     @FXML

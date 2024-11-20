@@ -25,17 +25,26 @@ public class PredictiveNotificationsController {
     @FXML
     private Button disabledButton1;
     @FXML
-    private Button hiddenSoftwareButton;
+    private Button hiddenMainMenuButton;
     @FXML
     private Button disabledButton2;
+    @FXML
+    private Button disabledButton3;
+    @FXML
+    private Button disabledButton4;
+    @FXML
+    private Button disabledButton5;
 
     @FXML
     public void initialize() {
         disabledButton1.setVisible(false);
         disabledButton2.setVisible(false);
+        disabledButton3.setVisible(false);
+        disabledButton4.setVisible(false);
+        disabledButton5.setVisible(false);
 
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
-            hiddenSoftwareButton.setOpacity(0);
+            hiddenMainMenuButton.setOpacity(0);
         }
 
         enabled = false;
@@ -44,9 +53,9 @@ public class PredictiveNotificationsController {
     }
 
     @FXML
-    protected void onHiddenSoftwareButtonClick() {
+    protected void onHiddenMainMenuButtonClick() {
         ResultsManager.incrementClickCount();
-        loadScene("predictive-software-menu.fxml");
+        loadScene("predictive-main-menu.fxml");
     }
 
     @FXML
