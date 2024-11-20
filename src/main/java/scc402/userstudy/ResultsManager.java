@@ -1,16 +1,22 @@
 package scc402.userstudy;
 
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class ResultsManager {
     private static long startTime;
     private static HashMap<String, Long> completionTime = new HashMap<>();
     private static HashMap<String, Integer> clickCount = new HashMap<>();
     private static int clickCounter = 0;
+    private static ArrayList<String[]> clickLogs = new ArrayList<>();
+    private static long lastClickTime;
 
     public static void startRecording(){
         startTime = System.currentTimeMillis();
+        lastClickTime = System.currentTimeMillis();
         clickCounter = 0;
         System.out.println("Timer and click count started:");
     }
@@ -25,11 +31,16 @@ public class ResultsManager {
         clickCounter = 0;
     }
 
-    //track specific buttons, all buttons or mouse event listener
-    public static void incrementClickCount() {
+    public static void recordClick(boolean clickError){
         clickCounter++;
-    }
 
+        long betweenClickDuration = System.currentTimeMillis() - lastClickTime;
+        lastClickTime = System.currentTimeMillis();
+
+        //place data in and say if error occurred or not
+        clickLogs.add(new String[]{TaskManager.getTaskName(), String.valueOf(clickCounter), String.valueOf(betweenClickDuration), String.valueOf(clickError)});
+        System.out.println("Click " + clickCounter + ": Time since last click = " + betweenClickDuration + "ms, Error = " + clickError);
+    }
 
     //
     //NEEDS TESTING AT THE END
@@ -52,7 +63,21 @@ public class ResultsManager {
 
         } catch (Exception e) {
             System.err.println("Failed to export results.");
+            e.printStackTrace();
             //print results to console
+        }
+
+        System.out.println("Click Results...");
+
+        try (FileWriter fileWriter = new FileWriter("click_results.csv")){
+            fileWriter.write("Task Name,Click Number,Time Since Last Click (ms),Error\n");
+            for (String [] log : clickLogs){
+                fileWriter.write(String.join(",", log) + "\n");
+            }
+            System.out.println("Click results exported successfully to click_results.csv");
+        } catch (Exception e) {
+            System.out.println("Failed to export clicks");
+            e.printStackTrace();
         }
     }
 }

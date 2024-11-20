@@ -13,21 +13,23 @@ public class StandardConnectivityController {
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("standard-hardware-menu.fxml");
     }
 
     @FXML
     protected void onWifiButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("standard-wi-fi.fxml");
     }
 
     @FXML
     protected void onBluetoothButtonClick() {
-        ResultsManager.incrementClickCount();
         if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
             loadScene("standard-bluetooth.fxml");
+        } else{
+            ResultsManager.recordClick(true);
         }
     }
 

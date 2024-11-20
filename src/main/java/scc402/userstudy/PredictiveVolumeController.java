@@ -53,19 +53,19 @@ public class PredictiveVolumeController {
 
     @FXML
     protected void onHiddenMainMenuButton() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware-menu.fxml");
     }
 
     @FXML
     protected void onHiddenConnectivityButton() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-connectivity.fxml");
     }
 

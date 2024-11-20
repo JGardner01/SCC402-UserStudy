@@ -34,31 +34,31 @@ public class PredictiveHardwareController {
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
     }
 
     @FXML
     protected void onHiddenSoftwareButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-software-menu.fxml");
     }
 
     @FXML
     protected void onHiddenAboutButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-about.fxml");
     }
 
     @FXML
     protected void onSoundButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-volume.fxml");
     }
 
     @FXML
     protected void onConnectivityButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-connectivity.fxml");
     }
 

@@ -50,27 +50,29 @@ public class PredictiveBluetoothController {
 
     @FXML
     protected void onHiddenHardwareButton() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware-menu.fxml");
     }
 
     @FXML
     protected void onHiddenWiFiButton() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-wi-fi.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
         TaskManager.RunSlow status = TaskManager.runningSlow(2);
         System.out.println(status);
         if (status == TaskManager.RunSlow.SLOW){
             //ignore click
+            ResultsManager.recordClick(true);
         } else if (status == TaskManager.RunSlow.BACK){
             loadScene("predictive-connectivity.fxml");
+            ResultsManager.recordClick(false);
         } else{
             loadScene("predictive-connectivity.fxml");
+            ResultsManager.recordClick(false);
         }
     }
 

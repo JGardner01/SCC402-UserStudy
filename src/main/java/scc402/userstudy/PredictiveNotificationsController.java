@@ -54,13 +54,13 @@ public class PredictiveNotificationsController {
 
     @FXML
     protected void onHiddenMainMenuButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-software-menu.fxml");
     }
 

@@ -25,5 +25,4 @@
 - State of mode, UI and test.
 
 # To Do
-- Make invisible buttons visible in demo
 - Time between clicks and on which click the error occurred

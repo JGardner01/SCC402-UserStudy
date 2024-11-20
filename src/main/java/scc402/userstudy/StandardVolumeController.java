@@ -29,7 +29,7 @@ public class StandardVolumeController {
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("standard-hardware-menu.fxml");
     }
 

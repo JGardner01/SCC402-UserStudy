@@ -40,22 +40,23 @@ public class PredictiveMainMenuController {
 
     @FXML
     protected void onHardwareButtonClick() {
-        ResultsManager.incrementClickCount();
-
         if (!TaskManager.clickNotRegistered(0, 1)){
+            ResultsManager.recordClick(false);
             loadScene("predictive-hardware-menu.fxml");
+        } else {
+            ResultsManager.recordClick(true);
         }
     }
 
     @FXML
     protected void onSoftwareButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-software-menu.fxml");
     }
 
     @FXML
     protected void onAboutButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-about.fxml");
     }
 

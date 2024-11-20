@@ -37,25 +37,25 @@ public class PredictiveSoftwareController {
 
     @FXML
     protected void onHiddenHardwareButtonClick(){
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware-menu.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
     }
 
     @FXML
     protected void onHiddenAboutButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-about.fxml");
     }
 
     @FXML
     protected void onNotificationsButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-notifications.fxml");
     }
 

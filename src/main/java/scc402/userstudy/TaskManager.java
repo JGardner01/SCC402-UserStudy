@@ -80,6 +80,10 @@ public class TaskManager {
         }
     }
 
+    public static String getTaskName(){
+        return taskName;
+    }
+
     public static void startTask(){
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();

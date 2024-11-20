@@ -40,19 +40,19 @@ public class PredictiveAboutController {
 
     @FXML
     protected void onHiddenHardwareButtonClick(){
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware-menu.fxml");
     }
 
     @FXML
     protected void onHiddenSoftwareButtonClick(){
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-software-menu.fxml");
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
     }
 

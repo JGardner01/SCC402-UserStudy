@@ -35,35 +35,37 @@ public class PredictiveConnectivityController {
 
     @FXML
     protected void onHiddenMainMenuButton(){
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-main-menu.fxml");
 
     }
 
     @FXML
     protected void onWifiButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-wi-fi.fxml");
     }
 
     @FXML
     protected void onBluetoothButtonClick() {
-        ResultsManager.incrementClickCount();
         if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
             loadScene("predictive-bluetooth.fxml");
+        } else {
+            ResultsManager.recordClick(true);
         }
     }
 
     @FXML
     protected void onHiddenVolumeButton(){
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-volume.fxml");
 
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware-menu.fxml");
     }
 

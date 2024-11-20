@@ -43,7 +43,7 @@ public class PredictiveWiFiController {
 
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             hiddenBluetoothButton.setOpacity(0);
-            hiddenBluetoothButton.setOpacity(0);
+            hiddenHardwareButton.setOpacity(0);
         }
 
         updateWifiStatus();
@@ -51,19 +51,19 @@ public class PredictiveWiFiController {
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-connectivity.fxml");
     }
 
     @FXML
     protected void onHiddenBluetoothButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-bluetooth.fxml");
     }
 
     @FXML
     protected void onHiddenHardwareButtonClick() {
-        ResultsManager.incrementClickCount();
+        ResultsManager.recordClick(false);
         loadScene("predictive-hardware.fxml");
     }
 
