@@ -7,6 +7,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.PredictiveAboutController">
    <children>
@@ -60,12 +61,25 @@
                   <Font name="Calibri" size="34.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FILL IN ABOUT TEXT HERE">
-               <font>
-                  <Font name="Calibri" size="18.0" />
-               </font>
-            </Text>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="In this project, we explore a predictive user interface (UI) design using graph theory to model and anticipate user intent in interactive interfaces. Error recovery is a vital component of digital systems, yet current designs don’t currently offer users the ability to recover effectively from errors. Our approach uses directed graphs to develop a UI that improves error handling and user efficiency by predicting intended actions based on touch input. Specifically, our model accounts for two common error types: missed touches and delays in displaying UI changes. By analysing recognised touches and anticipating lost ones, the system enhances accuracy, reducing time spent on error recovery. We developed this user interface builder solution, guiding designers in placing elements optimally to support intent prediction. This tool has the potential to transform user interfaces within critical environments by enabling developers to create systems with inherent error resilience without requiring machine learning.">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+            </TextFlow>
          </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </VBox>
    </children>
 </HBox>
