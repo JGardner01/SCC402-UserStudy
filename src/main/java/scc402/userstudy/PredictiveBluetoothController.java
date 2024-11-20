@@ -65,14 +65,10 @@ public class PredictiveBluetoothController {
         ResultsManager.incrementClickCount();
         TaskManager.RunSlow status = TaskManager.runningSlow(2);
         System.out.println(status);
-
-        //
-        //NEEDS TO BE UPDATED
-        //
         if (status == TaskManager.RunSlow.SLOW){
             //ignore click
         } else if (status == TaskManager.RunSlow.BACK){
-            loadScene("predictive-main-menu.fxml");
+            loadScene("predictive-connectivity.fxml");
         } else{
             loadScene("predictive-connectivity.fxml");
         }

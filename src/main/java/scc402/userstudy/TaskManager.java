@@ -145,7 +145,7 @@ public class TaskManager {
                 }
             } else{
                 try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("predictive-main-menu.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(TaskManager.class.getResource("predictive-bluetooth.fxml"));
                     Scene scene = new Scene(fxmlLoader.load());
                     Stage stage = (Stage) backButton.getScene().getWindow();
                     stage.setScene(scene);
