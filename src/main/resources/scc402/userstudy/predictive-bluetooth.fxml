@@ -32,12 +32,12 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButton" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
+            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButton" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Hardware (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenWiFiButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenWiFiButton" prefHeight="100.0" prefWidth="320.0" text="Wi-Fi (HIDDEN)">
+            <Button fx:id="hiddenWiFiButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenWiFiButton" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Wi-Fi (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

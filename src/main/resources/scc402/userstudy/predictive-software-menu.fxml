@@ -12,7 +12,7 @@
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="384.0" prefWidth="320.0" spacing="10.0">
          <children>
-            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButtonClick" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
+            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButtonClick" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Hardware (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
@@ -22,7 +22,7 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenAboutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenAboutButtonClick" prefHeight="100.0" text="About (HIDDEN)">
+            <Button fx:id="hiddenAboutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenAboutButtonClick" prefHeight="100.0" style="-fx-background-color: black;" text="About (HIDDEN)" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

@@ -32,7 +32,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButtonClick" prefHeight="100.0" prefWidth="320.0" text="Hardware (HIDDEN)">
+            <Button fx:id="hiddenHardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenHardwareButtonClick" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Hardware (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenBluetoothButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenBluetoothButtonClick" prefHeight="100.0" prefWidth="320.0" text="Bluetooth (HIDDEN)">
+            <Button fx:id="hiddenBluetoothButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenBluetoothButtonClick" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Bluetooth (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

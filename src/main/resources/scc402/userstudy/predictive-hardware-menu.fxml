@@ -17,12 +17,12 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenSoftwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenSoftwareButtonClick" prefHeight="100.0" text="Software (HIDDEN)">
+            <Button fx:id="hiddenSoftwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenSoftwareButtonClick" prefHeight="100.0" style="-fx-background-color: black;" text="Software (HIDDEN)" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenAboutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenAboutButtonClick" prefHeight="100.0" text="About (HIDDEN)">
+            <Button fx:id="hiddenAboutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenAboutButtonClick" prefHeight="100.0" style="-fx-background-color: black;" text="About (HIDDEN)" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>

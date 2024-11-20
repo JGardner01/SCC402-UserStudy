@@ -17,7 +17,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenMainMenuButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenMainMenuButtonClick" prefHeight="100.0" prefWidth="320.0" text="Main Menu (HIDDEN)">
+            <Button fx:id="hiddenMainMenuButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenMainMenuButtonClick" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Main Menu (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>

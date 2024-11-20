@@ -13,7 +13,7 @@
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="384.0" prefWidth="320.0" spacing="10.0">
          <children>
-            <Button fx:id="hiddenMainMenuButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenMainMenuButton" prefHeight="100.0" prefWidth="320.0" text="Main Menu (HIDDEN)">
+            <Button fx:id="hiddenMainMenuButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenMainMenuButton" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Main Menu (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
@@ -33,7 +33,7 @@
                   <Font name="Calibri" size="24.0" />
                </font>
             </Button>
-            <Button fx:id="hiddenConnectivityButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenConnectivityButton" prefHeight="100.0" prefWidth="320.0" text="Connectivity (HIDDEN)">
+            <Button fx:id="hiddenConnectivityButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHiddenConnectivityButton" prefHeight="100.0" prefWidth="320.0" style="-fx-background-color: black;" text="Connectivity (HIDDEN)" textFill="WHITE">
                <font>
                   <Font name="Calibri" size="24.0" />
                </font>
