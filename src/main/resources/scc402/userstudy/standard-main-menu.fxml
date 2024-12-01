@@ -4,40 +4,41 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.StandardMainMenuController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.StandardMainMenuController">
    <children>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="384.0" prefWidth="320.0" spacing="25.0">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="450.0" prefHeight="1080.0" prefWidth="450.0" spacing="40.0" style="-fx-border-color: black;" styleClass="black">
          <children>
-            <Button fx:id="hardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHardwareButtonClick" prefHeight="100.0" prefWidth="320.0" text="Hardware">
+            <Button fx:id="hardwareButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHardwareButtonClick" prefHeight="150.0" prefWidth="320.0" text="Hardware">
                <font>
-                  <Font name="Calibri" size="24.0" />
+                  <Font name="Calibri" size="36.0" />
                </font></Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoftwareButtonClick" prefHeight="100.0" text="Software">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSoftwareButtonClick" prefHeight="150.0" text="Software">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Calibri" size="36.0" />
                </font></Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAboutButtonClick" prefHeight="100.0" text="About">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAboutButtonClick" prefHeight="150.0" text="About">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Calibri" size="36.0" />
                </font></Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Line endX="-105.41421508789062" endY="719.2929077148438" startX="-100.0" />
-      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="962.0" spacing="10.0">
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1008.0" prefWidth="1474.0" spacing="10.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Device">
                <font>
-                  <Font name="Calibri" size="34.0" />
+                  <Font name="Calibri" size="50.0" />
                </font>
             </Text>
-            <Button fx:id="startTestButton" mnemonicParsing="false" onAction="#onStartTestButtonClick" text="Start Standard UI Test" />
+            <Button fx:id="startTestButton" mnemonicParsing="false" onAction="#onStartTestButtonClick" text="Start Standard UI Test">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font></Button>
          </children>
       </VBox>
    </children>
