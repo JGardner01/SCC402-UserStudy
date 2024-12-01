@@ -50,14 +50,18 @@ public class PredictiveBluetoothController {
 
     @FXML
     protected void onHiddenHardwareButton() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-hardware-menu.fxml");
+        if (!TaskManager.getDisabledButton()){
+            ResultsManager.recordClick(false);
+            loadScene("predictive-hardware-menu.fxml");
+        }
     }
 
     @FXML
     protected void onHiddenWiFiButton() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-wi-fi.fxml");
+        if (!TaskManager.getDisabledButton()) {
+            ResultsManager.recordClick(false);
+            loadScene("predictive-wi-fi.fxml");
+        }
     }
 
     @FXML

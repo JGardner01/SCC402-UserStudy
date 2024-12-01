@@ -25,15 +25,18 @@ public class TaskManager {
     //task tracking variables
     private static int [] ignoreButtonCounts = {0, 0}; //TASK 1 - 2 buttons not registering
     private static int runslowCount = 0; //TASK 2 - system running slow
+    private static boolean disabled = false; //TASK 2 - used for disabling invisible buttons on predictive UI
 
     public static boolean clickNotRegistered(int index, int threshold){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             ignoreButtonCounts[index]++;
             if (ignoreButtonCounts[index] <= threshold) {
                 System.out.println("Click ignored");
+                disabled = true;
                 return true;
             } else {
                 System.out.println("Click processed");
+                disabled = false;
                 return false;
             }
         } else {
@@ -84,6 +87,10 @@ public class TaskManager {
         return taskName;
     }
 
+    public static boolean getDisabledButton(){
+        return disabled;
+    }
+
     public static void startTask(){
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
@@ -91,7 +98,6 @@ public class TaskManager {
         ResultsManager.startRecording();
 
     }
-
 
  //call when task completed - on button click
     public static void endTask(Button backButton){
@@ -172,6 +178,8 @@ public class TaskManager {
         else if (StateManager.getCurrentUI() == StateManager.UI.STANDARD && StateManager.getCurrentTest() == StateManager.Test.TEST2){
             StateManager.setCurrentMode(StateManager.Mode.DEMO);
             StateManager.setCurrentUI(StateManager.UI.PREDICTIVE);
+
+            disabled = true;
 
             //reset variables
             SystemSettingManager.resetSettings();
