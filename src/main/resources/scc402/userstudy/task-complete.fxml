@@ -5,16 +5,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="408.0" spacing="15.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.TaskCompleteController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" spacing="25.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.TaskCompleteController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Task Complete!">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="48.0" />
          </font>
       </Text>
       <Button fx:id="continueButton" mnemonicParsing="false" onAction="#onContinueButton" text="Continue">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Button>
    </children>

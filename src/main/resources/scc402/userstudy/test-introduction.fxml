@@ -5,21 +5,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="269.0" prefWidth="408.0" spacing="15.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.TestIntroductionController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" spacing="25.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scc402.userstudy.TestIntroductionController">
    <children>
       <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Placeholder">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="48.0" />
          </font>
       </Text>
       <Text fx:id="instructionsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Instructions">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="36.0" />
          </font>
       </Text>
       <Button fx:id="startTaskButton" mnemonicParsing="false" onAction="#onStartTaskButton" text="Begin Task">
          <font>
-            <Font name="Calibri" size="18.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Button>
    </children>
