@@ -31,7 +31,7 @@ public class StartController {
             System.out.println("Starting Standard User Study");
             StateManager.setCurrentUI(StateManager.UI.STANDARD);
             StateManager.setCurrentMode(StateManager.Mode.DEMO);
-
+            SystemSettingManager.resetSettings();
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("standard-main-menu.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());

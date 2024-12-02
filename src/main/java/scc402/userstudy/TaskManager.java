@@ -18,8 +18,8 @@ public class TaskManager {
         BACK    //send back to target page
     }
 
-    public static final String task1Instructions = "Navigate the interface and enable Bluetooth.";
-    public static final String task2Instructions = "Navigate the interface and enable Wi-Fi";
+    public static final String task1Instructions = "Navigate the interface and toggle Bluetooth.";
+    public static final String task2Instructions = "Navigate the interface and toggle Wi-Fi";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
     //task tracking variables
