@@ -59,5 +59,8 @@ public class StartController {
                 e.printStackTrace();
             }
         }
+
+        ResultsManager.startDemoRecording();
+
     }
 }

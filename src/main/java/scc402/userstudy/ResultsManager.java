@@ -8,12 +8,32 @@ import java.util.List;
 
 public class ResultsManager {
     private static long startTime;
+    private static long standardDemoTime = 0;
+    private static long predictiveDemoTime = 0;
     private static HashMap<String, Long> completionTime = new HashMap<>();
     private static HashMap<String, Integer> clickCount = new HashMap<>();
     private static int clickCounter = 0;
     private static ArrayList<String[]> clickLogs = new ArrayList<>();
     private static long lastClickTime;
     public static String[] pastTasks = {"", "", "", ""};
+
+    public static void startDemoRecording(){
+        startTime = System.currentTimeMillis();
+        System.out.println("Demo timer started");
+    }
+
+    public static void endDemoRecording(){
+        System.out.println("Demo timer ended");
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        if (StateManager.getCurrentUI() == StateManager.UI.STANDARD){
+            standardDemoTime = duration;
+            System.out.println("Standard demo time: " + standardDemoTime);
+        } else {
+            predictiveDemoTime = duration;
+            System.out.println("Predictive demo time: " + predictiveDemoTime);
+        }
+    }
 
     public static void startRecording(){
         startTime = System.currentTimeMillis();
@@ -60,6 +80,9 @@ public class ResultsManager {
                 int clicks = clickCount.getOrDefault(taskName, 0);
                 fileWriter.write(taskName + "," + duration + "," + clicks + "\n");
             }
+
+            fileWriter.write("StandardDemoTime" + "," + standardDemoTime + "\n");
+            fileWriter.write("PredictiveDemoTime" + "," + predictiveDemoTime + "\n");
 
             System.out.println("Results exported successfully to results.csv.");
 

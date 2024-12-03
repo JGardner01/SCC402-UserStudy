@@ -70,6 +70,8 @@ public class PredictiveMainMenuController {
 
     @FXML
     protected void onStartTestButtonClick(){
+        ResultsManager.endDemoRecording();
+
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         StateManager.setCurrentTest(StateManager.Test.TEST1);
         loadScene("predictive-main-menu.fxml");
