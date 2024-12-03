@@ -50,14 +50,22 @@ public class PredictiveMainMenuController {
 
     @FXML
     protected void onSoftwareButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-software-menu.fxml");
+        if (!TaskManager.clickNotRegistered(0, 1)){
+            ResultsManager.recordClick(false);
+            loadScene("predictive-software-menu.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
     protected void onAboutButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-about.fxml");
+        if (!TaskManager.clickNotRegistered(0, 1)){
+            ResultsManager.recordClick(false);
+            loadScene("predictive-about.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML

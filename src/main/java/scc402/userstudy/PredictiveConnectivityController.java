@@ -35,15 +35,22 @@ public class PredictiveConnectivityController {
 
     @FXML
     protected void onHiddenMainMenuButton(){
-        ResultsManager.recordClick(false);
-        loadScene("predictive-main-menu.fxml");
-
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("predictive-main-menu.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
     protected void onWifiButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-wi-fi.fxml");
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("predictive-wi-fi.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
@@ -58,15 +65,22 @@ public class PredictiveConnectivityController {
 
     @FXML
     protected void onHiddenVolumeButton(){
-        ResultsManager.recordClick(false);
-        loadScene("predictive-volume.fxml");
-
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("predictive-volume.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("predictive-hardware-menu.fxml");
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("predictive-hardware-menu.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     private void loadScene(String fxmlFile) {
