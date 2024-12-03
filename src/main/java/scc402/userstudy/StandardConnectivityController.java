@@ -13,14 +13,22 @@ public class StandardConnectivityController {
 
     @FXML
     protected void onBackButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("standard-hardware-menu.fxml");
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("standard-hardware-menu.fxml");
+        } else{
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
     protected void onWifiButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("standard-wi-fi.fxml");
+        if (!TaskManager.clickNotRegistered(1,1)) {
+            ResultsManager.recordClick(false);
+            loadScene("standard-wi-fi.fxml");
+        } else{
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML

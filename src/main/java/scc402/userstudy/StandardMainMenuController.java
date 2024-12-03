@@ -35,14 +35,22 @@ public class StandardMainMenuController {
 
     @FXML
     protected void onSoftwareButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("standard-software-menu.fxml");
+        if (!TaskManager.clickNotRegistered(0, 1)){
+            ResultsManager.recordClick(false);
+            loadScene("standard-software-menu.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
     protected void onAboutButtonClick() {
-        ResultsManager.recordClick(false);
-        loadScene("standard-about.fxml");
+        if (!TaskManager.clickNotRegistered(0, 1)){
+            ResultsManager.recordClick(false);
+            loadScene("standard-about.fxml");
+        } else {
+            ResultsManager.recordClick(true);
+        }
     }
 
     @FXML
