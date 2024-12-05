@@ -13,7 +13,7 @@ public class TaskCompleteController {
     private Button continueButton;
 
     @FXML protected void onContinueButton(){
-        if (!(StateManager.getCurrentMode() == StateManager.Mode.DEMO && StateManager.getCurrentUI() == StateManager.UI.PREDICTIVE)){
+        if (TaskManager.getCompletedTasks() % 2 != 0){
             try{
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("test-introduction.fxml"));
                 Scene testIntroScene = new Scene(fxmlLoader.load());

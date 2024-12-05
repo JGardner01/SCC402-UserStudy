@@ -22,21 +22,21 @@ public class TaskManager {
     public static final String task2Instructions = "Navigate the interface and toggle Wi-Fi";
     private static String taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
 
+    public static int completedTasks = 0;
+
     //task tracking variables
     private static int [] ignoreButtonCounts = {0, 0}; //TASK 1 - 2 buttons not registering
     private static int runslowCount = 0; //TASK 2 - system running slow
-    private static boolean disabled = false; //TASK 2 - used for disabling invisible buttons on predictive UI
+    private static boolean disabled = true; //TASK 2 - used for disabling invisible buttons on predictive UI
 
     public static boolean clickNotRegistered(int index, int threshold){
         if (StateManager.getCurrentTest() == StateManager.Test.TEST1 && StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             ignoreButtonCounts[index]++;
             if (ignoreButtonCounts[index] <= threshold) {
                 System.out.println("Click ignored");
-                disabled = true;
                 return true;
             } else {
                 System.out.println("Click processed");
-                disabled = false;
                 return false;
             }
         } else {
@@ -51,15 +51,19 @@ public class TaskManager {
             runslowCount++;
             if (runslowCount < threshold + 1) {
                 System.out.println("Running Slow");
+                disabled = true;
                 return RunSlow.SLOW;
             } else if (runslowCount == threshold + 1) {
                 System.out.println("Running Normal Again Send To Relevant Page");
+                disabled = false;
                 return RunSlow.BACK;
             }else {
+                disabled = false;
                 System.out.println("Processed");
                 return RunSlow.NORMAL;
             }
         } else{
+            disabled = false;
             return RunSlow.NORMAL;
         }
     }
@@ -91,6 +95,10 @@ public class TaskManager {
         return disabled;
     }
 
+    public static int getCompletedTasks(){
+        return completedTasks;
+    }
+
     public static void startTask(){
         StateManager.setCurrentMode(StateManager.Mode.TEST);
         taskName = StateManager.getCurrentUI() + " " + StateManager.getCurrentTest();
@@ -103,6 +111,8 @@ public class TaskManager {
     public static void endTask(Button backButton){
         ResultsManager.endRecording(taskName);
 
+        completedTasks++;
+
         for (int i = 0; i < 4; i++){
             if (ResultsManager.pastTasks[i].equals("")){
                 ResultsManager.pastTasks[i] = taskName;
@@ -110,8 +120,8 @@ public class TaskManager {
             }
         }
 
-        //check if final predictive ui test is complete -> end testing and present finish screen
-        if (StateManager.getCurrentUI() == StateManager.UI.PREDICTIVE && StateManager.getCurrentMode() == StateManager.Mode.TEST && StateManager.getCurrentTest() == StateManager.Test.TEST2) {
+        //check if final ui test is complete -> end testing and present finish screen
+        if (StateManager.getCurrentMode() == StateManager.Mode.TEST && StateManager.getCurrentTest() == StateManager.Test.TEST2 && completedTasks >= 4) {
             //end testing -> dont route
             //export results
             System.out.println("Testing completed");
@@ -174,11 +184,16 @@ public class TaskManager {
             //load completed task scene
             displayTaskComplete();
         }
-        //check if test 2 of standard ui is completed -> change to predictive UI
-        else if (StateManager.getCurrentUI() == StateManager.UI.STANDARD && StateManager.getCurrentTest() == StateManager.Test.TEST2){
+        //check if test 2 is completed -> change to other UI
+        else if (StateManager.getCurrentTest() == StateManager.Test.TEST2 && completedTasks < 4){
             StateManager.setCurrentMode(StateManager.Mode.DEMO);
-            StateManager.setCurrentUI(StateManager.UI.PREDICTIVE);
+            StateManager.setCurrentTest(StateManager.Test.TEST1);
 
+            if (StateManager.getCurrentUI() == StateManager.UI.STANDARD) {
+                StateManager.setCurrentUI(StateManager.UI.PREDICTIVE);
+            } else {
+                StateManager.setCurrentUI((StateManager.UI.STANDARD));
+            }
             disabled = true;
 
             //reset variables

@@ -16,10 +16,13 @@ public class StateManager {
         TEST2
     }
 
-    //
-    //OVERRIDDEN MUST CHANGE BACK
-    //
+    /////////////////////////////////////////////////////////////////
+    ////CHANGE THIS DEPENDING ON WHAT TEST YOU WANT TO START WITH////
+    //////////////////UI.STANDARD OR UI.PREDICTIVE///////////////////
+    /////////////////////////////////////////////////////////////////
     private static UI currentUI = UI.STANDARD;
+    /////////////////////////////////////////////////////////////////
+
     private static Mode currentMode = Mode.DEMO;
     private static Test currentTest = Test.TEST1;
 
