@@ -1,4 +1,8 @@
 # SCC 402 User Study
+
+## Starting with Standard UI or Predictive UI
+Change the currentUI variable in the StateManager.java class to either UI.Standard or UI.Predictive 
+
 ## Task 1 (Click not registering)
 **Instructions:** Navigate and enable Bluetooth. 
 
