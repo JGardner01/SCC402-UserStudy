@@ -20,7 +20,7 @@ public class StateManager {
     ////CHANGE THIS DEPENDING ON WHAT TEST YOU WANT TO START WITH////
     //////////////////UI.STANDARD OR UI.PREDICTIVE///////////////////
     /////////////////////////////////////////////////////////////////
-    private static UI currentUI = UI.STANDARD;
+    private static UI currentUI = UI.PREDICTIVE;
     /////////////////////////////////////////////////////////////////
 
     private static Mode currentMode = Mode.DEMO;

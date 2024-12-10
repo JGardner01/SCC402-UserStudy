@@ -15,21 +15,19 @@ public class PredictiveHardwareController {
     private Button hiddenSoftwareButton;
     @FXML
     private Button hiddenAboutButton;
-
-    //disabled buttons
     @FXML
-    private Button disabledButton1;
+    private Button hiddenWifiButton;
     @FXML
-    private Button disabledButton2;
+    private Button hiddenBluetoothButton;
 
     @FXML
     public void initialize(){
         if (StateManager.getCurrentMode() == StateManager.Mode.TEST) {
             hiddenSoftwareButton.setOpacity(0);
             hiddenAboutButton.setOpacity(0);
+            hiddenWifiButton.setOpacity(0);
+            hiddenBluetoothButton.setOpacity(0);
         }
-        disabledButton1.setVisible(false);
-        disabledButton2.setVisible(false);
     }
 
     @FXML
@@ -48,6 +46,18 @@ public class PredictiveHardwareController {
     protected void onHiddenAboutButtonClick() {
         ResultsManager.recordClick(false);
         loadScene("predictive-about.fxml");
+    }
+
+    @FXML
+    protected void onHiddenWifiButtonClick() {
+        ResultsManager.recordClick(false);
+        loadScene("predictive-wi-fi.fxml");
+    }
+
+    @FXML
+    protected void onHiddenBluetoothButtonClick() {
+        ResultsManager.recordClick(false);
+        loadScene("predictive-bluetooth.fxml");
     }
 
     @FXML
